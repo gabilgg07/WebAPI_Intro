@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "LHA+28fPlFhI1/QXHC/oFutg8XI/JUNEHRy6Izvbw02Mk7vX4y08vaGvCiW8nYh9f1XTkcjBjkFNp0+cBFvUvw==",
+  "success": true,
+  "projectFilePath": "/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/StudentSystem.WebApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/macbook/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
