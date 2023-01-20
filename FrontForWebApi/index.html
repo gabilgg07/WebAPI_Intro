@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!-- JS -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="/node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ></script>
+    <script defer src="/assets/js/app.js"></script>
+    <script defer src="/assets/js/group.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-8 offset-2">
+          <button type="button" id="btnAdd" class="btn btn-outline-success">
+            + Create New Group
+          </button>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-8 offset-2">
+          <table class="table table-hover" id="groupTbl">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Group Name</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <form id="createGroup" class="modal" tabindex="-1" method="post">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="name" class="control-label">Name</label>
+                      <input id="name" name="name" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

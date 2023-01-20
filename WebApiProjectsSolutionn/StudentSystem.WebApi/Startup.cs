@@ -39,7 +39,15 @@ namespace StudentSystem.WebApi
 
             services.AddDbContext<StudentDbContext>(cfg =>
             {
-                cfg.UseSqlServer(configuration.GetConnectionString("cString"));
+                cfg.UseSqlServer(configuration.GetConnectionString("cStringMacLocal"));
+                //cfg.UseSqlServer(configuration.GetConnectionString("cStringSmarterasp"));
+            });
+
+            services.AddCors(cfg =>
+            {
+                cfg.AddPolicy("all", p => p.AllowAnyMethod()
+                .AllowAnyOrigin()
+                .AllowAnyHeader());
             });
         }
 
@@ -63,6 +71,8 @@ namespace StudentSystem.WebApi
             });
 
             app.UseRouting();
+
+            app.UseCors("all");
 
             app.UseEndpoints(endpoints =>
             {
