@@ -5,14 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using StudentSystem.WebApi.Models.DataContexts;
 
 namespace StudentSystem.WebApi
 {
     public class Startup
     {
+        readonly IConfiguration configuration;
+        public Startup(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -27,6 +36,11 @@ namespace StudentSystem.WebApi
             {
                 cfg.LowercaseUrls = true;
             });
+
+            services.AddDbContext<StudentDbContext>(cfg =>
+            {
+                cfg.UseSqlServer(configuration.GetConnectionString("cString"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +50,8 @@ namespace StudentSystem.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.Seed();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();

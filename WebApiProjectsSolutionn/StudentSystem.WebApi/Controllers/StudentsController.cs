@@ -1,46 +1,97 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using StudentSystem.WebApi.Models.DataContexts;
+using StudentSystem.WebApi.Models.Entities;
 
 namespace StudentSystem.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class StudentsController : Controller
     {
-        // GET: api/values
+        readonly StudentDbContext db;
+
+        public StudentsController(StudentDbContext db)
+        {
+            this.db = db;
+        }
+
+        // GET: api/Students
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var students = db.Students.ToList();
+
+            return Ok(students);
         }
 
-        // GET api/values/5
+        // GET api/Students/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            if (!db.Students.Any(g => g.Id == id))
+                return NotFound();
+
+            var student = db.Students
+                .FirstOrDefault(g => g.Id == id);
+
+            return Ok(student);
         }
 
-        // POST api/values
+        // POST api/Students
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<IActionResult> Add([FromBody] Student student)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            db.Students.Add(student);
+            await db.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(Get), routeValues: new
+            {
+                id = student.Id
+            },
+            student
+            );
         }
 
-        // PUT api/values/5
+        // PUT api/Students/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public async Task<IActionResult> Edit(int id, [FromBody] Student student)
         {
+            if (id != student.Id)
+                ModelState.AddModelError("Data", "Xetali muraciet gondermisiniz!!!");
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (!db.Students.Any(g => g.Id == id))
+                return NotFound();
+
+
+            db.Students.Update(student);
+            await db.SaveChangesAsync();
+
+            return Ok(student);
         }
 
-        // DELETE api/values/5
+        // DELETE api/Students/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            if (id < 1)
+                return BadRequest();
+
+            var entity = db.Students.SingleOrDefault(g => g.Id == id);
+
+            if (entity == null)
+                return NotFound();
+
+            db.Students.Remove(entity);
+            await db.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }
