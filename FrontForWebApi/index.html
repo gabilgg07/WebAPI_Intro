@@ -9,14 +9,11 @@
       rel="stylesheet"
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-
+    <link rel="stylesheet" href="/assets/css/style.min.css" />
     <!-- JS -->
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     ></script>
     <script
       defer
@@ -41,6 +38,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Group Name</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -71,6 +69,45 @@
                 </div>
               </div>
               <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <form id="editGroup" class="modal" tabindex="-1" method="post">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="name" class="control-label">Name</label>
+                      <input id="name" name="name" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type="hidden" name="id" />
                 <button
                   type="button"
                   class="btn btn-secondary"
