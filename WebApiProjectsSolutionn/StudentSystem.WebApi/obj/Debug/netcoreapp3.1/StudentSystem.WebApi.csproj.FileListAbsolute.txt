@@ -6,6 +6,9 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/StudentSystem.WebApi.runtimeconfig.dev.json
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/StudentSystem.WebApi.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/StudentSystem.WebApi.pdb
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Bcl.HashCode.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll
@@ -21,6 +24,8 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Core.dll
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Identity.Stores.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll
@@ -68,3 +73,4 @@
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/obj/Debug/netcoreapp3.1/StudentSystem.WebApi.dll
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/obj/Debug/netcoreapp3.1/StudentSystem.WebApi.pdb
 /Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/obj/Debug/netcoreapp3.1/StudentSystem.WebApi.genruntimeconfig.cache
+/Volumes/MySSD/01.Codes/01.VS/01.LessonsCodes/WebAPI_Intro/WebApiProjectsSolutionn/StudentSystem.WebApi/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.JwtBearer.dll
