@@ -20,6 +20,8 @@
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="Models\ViewModels\" />
+    <None Remove="AppCode\" />
+    <None Remove="AppCode\Providers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -27,6 +29,8 @@
     <Folder Include="Models\Entities\" />
     <Folder Include="Models\DataContexts\" />
     <Folder Include="Models\ViewModels\" />
+    <Folder Include="AppCode\" />
+    <Folder Include="AppCode\Providers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />

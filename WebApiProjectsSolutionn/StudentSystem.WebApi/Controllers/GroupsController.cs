@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentSystem.WebApi.Models.DataContexts;
 using StudentSystem.WebApi.Models.Entities;
@@ -17,7 +18,8 @@ namespace StudentSystem.WebApi.Controllers
 
         // GET: api/Groups
         [HttpGet]
-        public IActionResult Get()
+        [Authorize(Policy ="api.groups.getall")]
+        public IActionResult GetAll()
         {
             var groups = db.Groups.ToList();
 
@@ -26,6 +28,7 @@ namespace StudentSystem.WebApi.Controllers
 
         // GET api/Groups/5
         [HttpGet("{id}")]
+        [Authorize(Policy = "api.groups.getbyid")]
         public IActionResult Get(int id)
         {
             var group = db.Groups
@@ -39,6 +42,7 @@ namespace StudentSystem.WebApi.Controllers
 
         // POST api/Groups
         [HttpPost]
+        [Authorize(Policy = "api.groups.add")]
         public async Task<IActionResult> Add([FromBody] Group group)
         {
             if (!ModelState.IsValid)
@@ -57,6 +61,7 @@ namespace StudentSystem.WebApi.Controllers
 
         // PUT api/Groups/5
         [HttpPut("{id}")]
+        [Authorize(Policy = "api.groups.edit")]
         public async Task<IActionResult> Edit(int id, [FromBody]  Group group)
         {
             if (id != group.Id)
@@ -77,6 +82,7 @@ namespace StudentSystem.WebApi.Controllers
 
         // DELETE api/Groups/5
         [HttpDelete("{id}")]
+        [Authorize(Policy = "api.groups.delete")]
         public async Task<IActionResult> Delete(int id)
         {
             if (id < 1)

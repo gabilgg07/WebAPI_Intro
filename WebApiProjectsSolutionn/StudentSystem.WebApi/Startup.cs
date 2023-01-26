@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using StudentSystem.WebApi.AppCode.Providers;
 using StudentSystem.WebApi.Models.DataContexts;
 using StudentSystem.WebApi.Models.Entity.Membership;
 
@@ -29,8 +26,6 @@ namespace StudentSystem.WebApi
             this.configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {  // Register the Swagger generator, defining 1 or more Swagger documents
 
@@ -50,7 +45,26 @@ namespace StudentSystem.WebApi
             });
 
             services.AddAuthentication();
-            services.AddAuthorization();
+            services.AddAuthorization(cfg =>
+            {
+
+                if (Program.policies != null)
+                {
+                    foreach (var policy in Program.policies)
+                    {
+                        cfg.AddPolicy(policy, p =>
+                        {
+                            p.RequireAssertion(handler =>
+                            {
+                                bool allow = handler.User.IsInRole("SuperAdmin")
+                                || handler.User.HasClaim(m => m.Type.Equals(policy) && m.Value.Equals("1"));
+
+                                return allow;
+                            });
+                        });
+                    }
+                }
+            });
 
             services.AddRouting(cfg =>
             {
@@ -69,6 +83,7 @@ namespace StudentSystem.WebApi
             services.AddScoped<SignInManager<StudentSystemUser>>();
             services.AddScoped<UserManager<StudentSystemUser>>();
             services.AddScoped<RoleManager<StudentSystemRole>>();
+            services.AddScoped<IClaimsTransformation, ApiClaimProvider>();
 
             services.AddCors(cfg =>
             {
